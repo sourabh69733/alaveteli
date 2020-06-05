@@ -90,9 +90,6 @@ module Alaveteli
     require "#{Rails.root}/lib/strip_empty_sessions"
     config.middleware.insert_before ::ActionDispatch::Cookies, StripEmptySessions, :key => '_wdtk_cookie_session', :path => "/", :httponly => true
 
-    # Strip non-UTF-8 request parameters
-    config.middleware.insert 0, Rack::UTF8Sanitizer
-
     # Allow the generation of full URLs in emails
     config.action_mailer.default_url_options = { :host => AlaveteliConfiguration::domain }
     if AlaveteliConfiguration::force_ssl

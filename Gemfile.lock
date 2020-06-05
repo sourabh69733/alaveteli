@@ -273,8 +273,6 @@ GEM
       rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
-    rack-utf8_sanitizer (1.7.0)
-      rack (>= 1.0, < 3.0)
     rails (5.1.7)
       actioncable (= 5.1.7)
       actionmailer (= 5.1.7)
@@ -481,7 +479,6 @@ DEPENDENCIES
   public_suffix (~> 2.0.0, < 3.0.0)
   rack (~> 2.2.2)
   rack-ssl (~> 1.4.0)
-  rack-utf8_sanitizer (~> 1.7.0)
   rails (= 5.1.7)
   rails-controller-testing
   rails-i18n (~> 5.1.0)
