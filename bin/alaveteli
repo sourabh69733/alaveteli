@@ -1,0 +1,26 @@
+#!/usr/bin/env ruby
+
+require 'optparse'
+
+options = {}
+
+optparse = OptionParser.new do |opts|
+  opts.banner = "Usage: alaveteli [options]"
+
+  opts.on('-c', '--config SETTING', 'Get a configuration setting') do |get|
+    options[:get] = get
+  end
+
+  opts.on('-h', '--help', 'Display this screen') do
+    puts opts
+    exit
+  end
+end
+
+optparse.parse!
+
+require 'yaml'
+settings = YAML.load_file(
+  File.join(File.dirname(__FILE__), '..', 'config', 'general.yml')
+)
+puts settings[options[:get].upcase] if options[:get]
