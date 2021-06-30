@@ -1,3 +1,4 @@
+# TODO: Migrate Statistics class to module
 class Statistics
   class << self
     def public_bodies
