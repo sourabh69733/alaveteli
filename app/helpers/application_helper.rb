@@ -76,9 +76,11 @@ module ApplicationHelper
 
   def admin_date(date, ago_only: false)
     ago_text = _('{{length_of_time}} ago', :length_of_time => time_ago_in_words(date))
-    return ago_text if ago_only
 
-    "#{date} (#{ago_text})"
+    ago_tag = content_tag(:span, ago_text, title: date)
+    return ago_tag if ago_only
+
+    raw "#{date} (#{ago_tag})"
   end
 
   def read_asset_file(asset_name)
